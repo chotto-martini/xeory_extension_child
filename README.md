@@ -1,1 +1,1 @@
-# xeory_extension_child
+# WordPressテーマ XeoryExtension の子テーマ
