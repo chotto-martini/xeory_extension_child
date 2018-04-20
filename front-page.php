@@ -63,7 +63,7 @@
       } ?></p>
     <h3><?php the_title(); ?></h3>
     <p class="p_rank">NO.<span><?php echo $i; ?></span></p>
-    
+
     </a>
   </article>
 
@@ -104,7 +104,7 @@
           );
 
       query_posts($args);
-      
+
       if ( have_posts() ) :
         while ( have_posts() ) : the_post();
 
@@ -190,10 +190,10 @@
       </div>
     </div>
   </section>
-<?php 
+<?php
   $i++;
     }
-  } 
+  }
 ?>
 
 
@@ -251,7 +251,7 @@
   <?php
     }
   }
-  ?>    
+  ?>
     </div>
   </div>
 
@@ -259,12 +259,12 @@
 
 <!-- 会社概要 -->
 <div id="front-company" class="front-main-cont">
-  <?php 
+  <?php
     $companies = get_option('company');
     $use_company_map = get_option('use_company_map');
     $company_map = "";
     $company_map_class = '';
-    
+
     if(isset($use_company_map) && $use_company_map !== ''){
       $company_map = get_option('company_map');
     }else{
@@ -296,7 +296,7 @@
 
     <div class="wrap">
       <div class="c_box_inner">
-        <?php 
+        <?php
         if(isset($companies) && $companies !== ''){
           $i = 1;
           foreach((array)$companies as $key => $company){
@@ -312,41 +312,9 @@
   </section>
 </div><!-- front-company -->
 
-<!-- お問い合わせ -->
-<div id="front-contact" class="front-main-cont">
-  <?php 
-
-  $icon = 0;
-  $titile = '';
-  $ruby = '';
-  $bzb_contact_header_array = get_option('bzb_contact_header');
-  if(is_array($bzb_contact_header_array)){
-    extract($bzb_contact_header_array) ;
-  }
-
-  $bzb_contact_textarea = get_option('bzb_contact_textarea');
-  ?>
-
-  <header class="category_title main_title front-cont-header">
-    <div class="cont-icon"><i class="<?php echo $icon;?>"></i></div>
-    <h2 class="cont-title"><?php echo $title;?></h2>
-    <p class="cont-ruby"><?php echo $ruby;?></p>
-    <div class="tri-border"><span></span></div>
-  </header>
-
-  <section id="front-contents-1" class="c_box c_box_left">
-    <div class="wrap">
-      <div class="c_box_inner">
-        <?php echo $content = apply_filters( 'the_content', $bzb_contact_textarea, 10 ); ?>
-      </div>
-    </div>
-  </section>
-</div><!-- front-contact -->
-
-
   </div><!-- /main-inner -->
 </div><!-- /main -->
-  
+
 </div><!-- /content -->
 <?php get_footer(); ?>
 
